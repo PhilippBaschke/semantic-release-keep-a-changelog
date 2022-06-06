@@ -1,0 +1,22 @@
+{
+  "name": "semantic-release-keep-a-changelog",
+  "version": "1.0.0",
+  "description": "A semantic-release plugin to update the CHANGELOG according to Keep a Changelog",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhilippBaschke/semantic-release-keep-a-changelog.git"
+  },
+  "author": "Philipp Baschke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PhilippBaschke/semantic-release-keep-a-changelog/issues"
+  },
+  "homepage": "https://github.com/PhilippBaschke/semantic-release-keep-a-changelog#readme"
+}
