@@ -1,3 +1,3 @@
 module.exports = {
-  '*.js': ['xo --fix'],
+  '*.js': ['xo --fix', 'jest --bail --findRelatedTests --passWithNoTests'],
 };
