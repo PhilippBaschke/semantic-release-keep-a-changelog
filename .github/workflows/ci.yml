@@ -5,9 +5,9 @@ name: CI
 
 on:
   push:
-    branches: [$default-branch]
+    branches: [main]
   pull_request:
-    branches: [$default-branch]
+    branches: [main]
 
 jobs:
   test:
@@ -31,7 +31,7 @@ jobs:
   release:
     needs: test
 
-    if: github.ref_name == $default-branch
+    if: github.ref_name == 'main'
 
     runs-on: ubuntu-latest
 
