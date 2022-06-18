@@ -1,4 +1,6 @@
-# Based on https://github.com/actions/starter-workflows/blob/main/ci/node.js.yml
+# Based on
+# https://github.com/actions/starter-workflows/blob/main/ci/node.js.yml
+# https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/ci-configurations/github-actions.md
 name: CI
 
 on:
@@ -25,3 +27,24 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm test
+
+  release:
+    needs: test
+
+    if: github.ref_name == $default-branch
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+      - run: npm ci
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release --dry-run
