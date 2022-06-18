@@ -1,0 +1,5 @@
+{
+  "name": "semantic-release-keep-a-changelog-local",
+  "version": "1.0.0",
+  "main": "../../src/index.js"
+}
